@@ -6,12 +6,12 @@ import { AiOutlineDelete } from "react-icons/ai";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { DataContext } from "../../context/DataProvider";
 
-export const DetailsPages = () => {
+const DetailsPages = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [blogs, setBlogs] = useContext(DataContext);
 
-  const [comment, setComment] = useState(null);
+  const [comment, setComment] = useState("");
   const [update, setUpdate] = useState(false);
   const blog = blogs.find((blog) => blog.id === +id);
 
@@ -35,7 +35,7 @@ export const DetailsPages = () => {
       }
       blogs[indexToUpdate] = updatedBlog;
       localStorage.setItem("blogs", JSON.stringify(blogs));
-
+      setComment("");
       setUpdate(!update);
     } else {
       alert("Bình luận thất bại");
@@ -48,7 +48,11 @@ export const DetailsPages = () => {
         <section className="singlePage">
           <div className="container">
             <div className="left">
-              <img src={blog.cover} alt="" style={{ width: "50%" }} />
+              <img
+                src={blog.cover ? blog.cover : "../images/blogs/b1.jpg"}
+                alt=""
+                style={{ width: "50%" }}
+              />
             </div>
             <div className="right">
               <div className="buttons">
@@ -65,7 +69,7 @@ export const DetailsPages = () => {
             </div>
             <div className="right">
               <h1>Bình luận</h1>
-              <div style={{ display: "flex" }}>
+              <div style={{ display: "flex", marginTop: "10px" }}>
                 <div
                   style={{
                     border: "1px solid black",
@@ -76,8 +80,8 @@ export const DetailsPages = () => {
                 >
                   <input
                     type="text"
-                    // value={comment}
-                    placeholder="Title"
+                    value={comment}
+                    placeholder="Bình luận"
                     onChange={(e) => setComment(e.target.value)}
                     style={{ width: "100%" }}
                   />
@@ -85,7 +89,7 @@ export const DetailsPages = () => {
                 <button
                   className="button"
                   onClick={(e) => handleComment(e)}
-                  style={{ flex: "1" }}
+                  style={{ flex: "1", background: "#24ABEA" }}
                 >
                   Bình luận
                 </button>
@@ -113,3 +117,5 @@ export const DetailsPages = () => {
     </>
   );
 };
+
+export default DetailsPages;

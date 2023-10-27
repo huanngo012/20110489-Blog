@@ -27,7 +27,7 @@ const SamplePrevArrow = (props) => {
     </div>
   );
 };
-export const Category = () => {
+const Category = () => {
   const settings = {
     dots: false,
     infinite: true,
@@ -69,3 +69,5 @@ export const Category = () => {
     </>
   );
 };
+
+export default Category;

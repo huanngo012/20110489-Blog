@@ -10,7 +10,7 @@ import {
 import { Link } from "react-router-dom";
 import { DataContext } from "../../context/DataProvider";
 
-export const Card = () => {
+const Card = () => {
   const [blogs, setBlogs] = useContext(DataContext);
   return (
     <>
@@ -20,7 +20,10 @@ export const Card = () => {
             <Link key={index} to={`/details/${item.id}`} className="link">
               <div className="box boxItems" key={item.id}>
                 <div className="img">
-                  <img src={item.cover} alt="" />
+                  <img
+                    src={item.cover ? item.cover : "../images/blogs/b1.jpg"}
+                    alt=""
+                  />
                 </div>
                 <div className="details">
                   <div className="tag">
@@ -44,3 +47,5 @@ export const Card = () => {
     </>
   );
 };
+
+export default Card;

@@ -1,13 +1,12 @@
-import React from "react"
-import { Card } from "../../components/blog/Card"
-import { Category } from "../../components/category/Category"
+import React from "react";
+import { Card, Category } from "../../components";
 
-export const Home = () => {
+const Home = () => {
   return (
     <>
-      {/*  <Slider />*/}
       <Category />
       <Card />
     </>
-  )
-}
+  );
+};
+export default Home;

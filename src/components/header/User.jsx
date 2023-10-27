@@ -18,30 +18,30 @@ export const User = () => {
               onClick={() => setProfileOpen(!profileOpen)}
             >
               <img
-                src="https://images.pexels.com/photos/1097456/pexels-photo-1097456.jpeg?auto=compress&cs=tinysrgb&w=600"
+                src="https://kenh14cdn.com/203336854389633024/2022/5/9/photo-1-1652081689947418553935.png"
                 alt=""
               />
             </button>
             {profileOpen && (
               <div className="openProfile boxItems" onClick={close}>
-                <Link to="/account">
+                <Link>
                   <div className="image">
                     <div className="img">
                       <img
-                        src="https://images.pexels.com/photos/1097456/pexels-photo-1097456.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        src="https://kenh14cdn.com/203336854389633024/2022/5/9/photo-1-1652081689947418553935.png"
                         alt=""
                       />
                     </div>
                     <div className="text">
-                      <h4>Eden Smith</h4>
-                      <label>Los Angeles, CA</label>
+                      <h4>Ngô Công Huân</h4>
+                      <label>20110489</label>
                     </div>
                   </div>
                 </Link>
                 <Link to="/create">
                   <button className="box">
                     <RiImageAddLine className="icon" />
-                    <h4>Create Post</h4>
+                    <h4>Tạo Blog</h4>
                   </button>
                 </Link>
               </div>

@@ -3,7 +3,7 @@ import "./create.css";
 import { DataContext } from "../../context/DataProvider";
 import { useNavigate } from "react-router";
 
-export const Create = () => {
+const Create = () => {
   const navigate = useNavigate();
   const [blogs, setBlogs] = useContext(DataContext);
   const [payload, setPayload] = useState({
@@ -31,11 +31,12 @@ export const Create = () => {
     <>
       <section className="newPost">
         <div className="container boxItems">
-          <div className="img ">
+          <div className="img">
             <img
-              src="https://images.pexels.com/photos/6424244/pexels-photo-6424244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              src="https://t4.ftcdn.net/jpg/04/73/25/49/360_F_473254957_bxG9yf4ly7OBO5I0O5KABlN930GwaMQz.jpg"
               alt=""
               className="image-preview"
+              style={{ objectFit: "contain" }}
             />
           </div>
           <form>
@@ -44,13 +45,14 @@ export const Create = () => {
             </div>
             <input
               type="text"
-              placeholder="Title"
+              placeholder="Tiêu đề"
               onChange={(e) =>
                 setPayload((prev) => ({ ...prev, title: e.target.value }))
               }
             />
 
             <textarea
+              placeholder="Mô tả"
               name=""
               id=""
               cols="30"
@@ -60,12 +62,33 @@ export const Create = () => {
               }
             ></textarea>
 
-            <button className="button" onClick={(e) => addBlog(e)}>
-              Create Post
-            </button>
+            <div
+              style={{ display: "flex", justifyContent: "end", gap: "20px" }}
+            >
+              <button
+                className="button"
+                style={{
+                  backgroundColor: "green",
+                }}
+                onClick={(e) => addBlog(e)}
+              >
+                Tạo Blog
+              </button>
+              <button
+                className="button"
+                style={{
+                  backgroundColor: "red",
+                }}
+                onClick={() => navigate(`/`)}
+              >
+                Quay lại
+              </button>
+            </div>
           </form>
         </div>
       </section>
     </>
   );
 };
+
+export default Create;

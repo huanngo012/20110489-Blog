@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import { blog } from "../assets/data/data";
+import { blog } from "../data/data";
 export const DataContext = createContext();
 const DataProvider = ({ children }) => {
   const [blogs, setBlogs] = useState(blog);
