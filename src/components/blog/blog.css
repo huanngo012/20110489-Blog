@@ -3,6 +3,7 @@
 }
 .blog .boxItems {
   transition: 0.5s;
+  height: 677px;
 }
 .blog .boxItems:hover {
   box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
@@ -20,6 +21,7 @@
   margin-right: 10px;
   font-size: 20px;
 }
+
 .blog .tag a {
   color: blue;
   opacity: 0.7;
