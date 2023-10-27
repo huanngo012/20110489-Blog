@@ -5,6 +5,7 @@ import { BsPencilSquare } from "react-icons/bs";
 import { AiOutlineDelete } from "react-icons/ai";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { DataContext } from "../../context/DataProvider";
+import { Comment } from "../../components";
 
 const DetailsPages = () => {
   const { id } = useParams();
@@ -54,7 +55,7 @@ const DetailsPages = () => {
                 style={{ width: "50%" }}
               />
             </div>
-            <div className="right">
+            <div style={{ marginTop: "30px" }}>
               <div className="buttons">
                 <Link to={`/edit/${id}`} className="button">
                   <BsPencilSquare />
@@ -95,18 +96,7 @@ const DetailsPages = () => {
                 </button>
               </div>
               {blog?.comments?.map((el, index) => (
-                <div
-                  key={index}
-                  style={{
-                    border: "1px solid black",
-                    flex: "11",
-                    borderRadius: "6px",
-                    padding: "10px",
-                    marginTop: "20px",
-                  }}
-                >
-                  {el}
-                </div>
+                <Comment name="Ngô Công Huân" comment={el} key={index} />
               ))}
             </div>
           </div>

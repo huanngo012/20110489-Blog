@@ -2,7 +2,7 @@ import React from "react";
 import { logo } from "../../assets";
 import "./header.css";
 import { User } from "./User";
-import { nav } from "../../data/data";
+import { Nav } from "../../data/data";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -19,9 +19,11 @@ const Header = () => {
           </Link>
           <nav>
             <ul>
-              {nav.map((link) => (
+              {Nav.map((link) => (
                 <li key={link.id}>
-                  <Link to={link.url}>{link.text}</Link>
+                  <Link to={link.url}>
+                    <b style={{ fontSize: "18px" }}>{link.text}</b>
+                  </Link>
                 </li>
               ))}
             </ul>

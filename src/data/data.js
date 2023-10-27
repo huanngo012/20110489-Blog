@@ -1,4 +1,4 @@
-export const nav = [
+export const Nav = [
   {
     id: 1,
     text: "Trang chủ",
